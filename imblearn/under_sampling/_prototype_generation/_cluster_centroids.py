@@ -10,14 +10,15 @@ import numpy as np
 from scipy import sparse
 
 from sklearn.base import clone
-from sklearn.cluster import KMeans
-from sklearn.neighbors import NearestNeighbors
 from sklearn.utils import _safe_indexing
 
 from ..base import BaseUnderSampler
 from ...utils import Substitution
 from ...utils._docstring import _random_state_docstring
 from ...utils._validation import _deprecate_positional_args
+
+from cuml import KMeans
+from cuml.neighbors import NearestNeighbors
 
 VOTING_KIND = ("auto", "hard", "soft")
 
